@@ -2,10 +2,12 @@ package com.company.myCompany.basicJava;
 
 import java.util.HashSet;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class RandomNum {
     public static void main(String[] args) {
         Random random =  new Random();
+      //  IntStream i = random.ints();
 //        for (int i = 0; i < 5; i++) {
 //            System.out.println(random.nextInt());
 //        }

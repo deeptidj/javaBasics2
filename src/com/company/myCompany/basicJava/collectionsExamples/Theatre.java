@@ -21,9 +21,7 @@ public class Theatre {
                 Seat s = new Seat(rowNo+String.format("%02d",seatNo));
                 seats.add(s);
             }
-
         }
-
     }
     String getName() {
         return this.name;
@@ -49,20 +47,14 @@ public class Theatre {
         }
     }
 
-private class Seat{
+    private class Seat{
         String seatNo;
-
         public Seat(String seatNo) {
             this.seatNo = seatNo;
-
+        }
+        public String getSeatNo() {
+            return seatNo;
+        }
     }
-
-
-    public String getSeatNo() {
-        return seatNo;
-    }
-
-
-}
 
 }

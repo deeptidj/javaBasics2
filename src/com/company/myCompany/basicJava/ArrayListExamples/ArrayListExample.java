@@ -3,7 +3,7 @@ package com.company.myCompany.basicJava.ArrayListExamples;
 import java.util.*;
 import java.util.function.Predicate;
 
-class Student implements Comparable<Student>{
+class Student implements Comparable<Student> {
     int rollNo;
     String name;
     int mathScore;
@@ -17,25 +17,28 @@ class Student implements Comparable<Student>{
         this.name = name;
         this.rollNo = rollNumberCounter++;
     }
+
     public void setMarks(int mathScore, int englishScore, int scienceScore) {
         this.mathScore = mathScore;
         this.scienceScore = scienceScore;
         this.englishScore = englishScore;
     }
+
     int total() {
-        return mathScore+scienceScore+englishScore;
+        return mathScore + scienceScore + englishScore;
     }
+
     void setNegatives(int negative) {
         this.negative = negative;
     }
 
     int ranking() {
-        return (total()*2) - negative;
+        return (total() * 2) - negative;
     }
 
     @Override
     public int compareTo(Student s2) {
-        if(this.ranking() > s2.ranking()) return 1;
+        if (this.ranking() > s2.ranking()) return 1;
         else if (this.ranking() < s2.ranking()) return -1;
         return 0;
     }
@@ -52,10 +55,11 @@ class Student implements Comparable<Student>{
                 '}';
     }
 }
+
 public class ArrayListExample {
 
     public static ArrayList<String> createProgrammingLanguagesArrayList() {
-        ArrayList<String> strings =  new ArrayList<>(25);
+        ArrayList<String> strings = new ArrayList<>(25);
         String bigString = "Deep Deep Deep Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu sem\n" +
                 "\n";
 
@@ -63,32 +67,36 @@ public class ArrayListExample {
         printList(strings);
         return strings;
     }
+
     public static void printList(ArrayList<String> strings) {
         strings.forEach(string -> {
             System.out.println(string);
         });
     }
-public static void printFromBack(ArrayList<String> strings){
-       ListIterator<String> listIte = strings.listIterator(strings.size());
-       while(listIte.hasPrevious()) {
-           String s = listIte.previous();
-           if(s.equalsIgnoreCase("Suspendisse")) {
-               System.out.println("****************************************************\t \t \t *********************");
-           }
-           System.out.println();
-       }
-}
+
+    public static void printFromBack(ArrayList<String> strings) {
+        ListIterator<String> listIte = strings.listIterator(strings.size());
+        while (listIte.hasPrevious()) {
+            String s = listIte.previous();
+            if (s.equalsIgnoreCase("Suspendisse")) {
+                System.out.println("****************************************************\t \t \t *********************");
+            }
+            System.out.println();
+        }
+    }
+
     public static void printStartingWithL(ArrayList<String> strings) {
         Iterator<String> ite = strings.iterator();
-        while(ite.hasNext()){
+        while (ite.hasNext()) {
             String s = ite.next();
-            if(s.startsWith("L") || s.startsWith("l") ) {
+            if (s.startsWith("L") || s.startsWith("l")) {
                 System.out.println(s);
                 System.out.println(" ===== *** ");
             }
         }
 
     }
+
     public static ArrayList<String> clearAllStartingWithD(ArrayList<String> strings) {
         strings.removeIf(new Predicate<String>() {
             @Override
@@ -98,6 +106,7 @@ public static void printFromBack(ArrayList<String> strings){
         });
         return strings;
     }
+
     public static ArrayList<String> clearAllStartingWithC(ArrayList<String> strings) {
         strings.removeIf(new Predicate<String>() {
             @Override
@@ -110,16 +119,16 @@ public static void printFromBack(ArrayList<String> strings){
 
     public static void main(String[] args) {
 
-        ArrayList<String> weekDays = new ArrayList<>(Arrays.asList("Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"));
+        ArrayList<String> weekDays = new ArrayList<>(Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"));
         weekDays.forEach(day -> {
-            System.out.println(day.toString());
+            System.out.println(day);
         });
 
         weekDays.removeIf(new Predicate<String>() {
-           @Override
-           public boolean test(String s) {
+            @Override
+            public boolean test(String s) {
                 return s.equalsIgnoreCase("Saturday");
-           }
+            }
         });
 
         weekDays.forEach(day -> {
@@ -142,40 +151,40 @@ public static void printFromBack(ArrayList<String> strings){
         students.add(s6);
         students.add(s7);
 
-        s1.setMarks(90,60,70);
-        s2.setMarks(60,70,80);
+        s1.setMarks(90, 60, 70);
+        s2.setMarks(60, 70, 80);
         s1.setNegatives(10);
         s2.setNegatives(10);
 
-        s3.setMarks(60,70,80);
-        s4.setMarks(60,70,80);
+        s3.setMarks(60, 70, 80);
+        s4.setMarks(60, 70, 80);
         s3.setNegatives(20);
         s4.setNegatives(20);
 
-        System.out.println(s1.toString());
-        System.out.println(s2.toString());
-        System.out.println(s3.toString());
-        System.out.println(s4.toString());
-        System.out.println(s5.toString());
-        System.out.println(s6.toString());
-        System.out.println(s7.toString());
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+        System.out.println(s4);
+        System.out.println(s5);
+        System.out.println(s6);
+        System.out.println(s7);
 
         System.out.println("** Ranks **");
-        if (s1.compareTo(s2) == 1 ) {
-            System.out.println(s1.name+ " ranks better than "+s2.name);
+        if (s1.compareTo(s2) == 1) {
+            System.out.println(s1.name + " ranks better than " + s2.name);
         } else if (s1.compareTo(s2) == -1) {
-            System.out.println(s2.name+ " ranks betten than "+s1.name);
+            System.out.println(s2.name + " ranks betten than " + s1.name);
         } else {
-            System.out.println(s1.name +" ranks same as "+ s2.name);
+            System.out.println(s1.name + " ranks same as " + s2.name);
         }
 
         System.out.println("** Ranks **");
-        if (s3.compareTo(s4) == 1 ) {
-            System.out.println(s3.name+ " ranks better than "+s4.name);
+        if (s3.compareTo(s4) == 1) {
+            System.out.println(s3.name + " ranks better than " + s4.name);
         } else if (s3.compareTo(s4) == -1) {
-            System.out.println(s4.name+ " ranks betten than "+s3.name);
+            System.out.println(s4.name + " ranks betten than " + s3.name);
         } else {
-            System.out.println(s3.name +" ranks same as "+ s4.name);
+            System.out.println(s3.name + " ranks same as " + s4.name);
         }
 
 //        System.out.println("*** Removing 3 ***");
@@ -195,14 +204,15 @@ public static void printFromBack(ArrayList<String> strings){
 
 
     }
+
     public static void main1(String[] args) {
 
-     //   ArrayList<String>  clearCStrings = clearAllStartingWithC(createProgrammingLanguagesArrayList());
-     //   ArrayList<String>  clearDStrings = clearAllStartingWithD(createProgrammingLanguagesArrayList());
+        //   ArrayList<String>  clearCStrings = clearAllStartingWithC(createProgrammingLanguagesArrayList());
+        //   ArrayList<String>  clearDStrings = clearAllStartingWithD(createProgrammingLanguagesArrayList());
 //        printList(clearCStrings);
 //        printStartingWithL(clearCStrings);
-    //    printFromBack(clearCStrings);
-     //   printList(clearDStrings);
+        //    printFromBack(clearCStrings);
+        //   printList(clearDStrings);
    /*     ArrayList<String> tvShows =  new ArrayList<>(25);
         tvShows.add("ozark");
         tvShows.add("sloane");
@@ -304,26 +314,26 @@ public static void printFromBack(ArrayList<String> strings){
     */
 
         //Create arraylist in single statement
-        ArrayList<String> names = new ArrayList<String>( Arrays.asList("alex", "brian", "charles") );
+        ArrayList<String> names = new ArrayList<String>(Arrays.asList("alex", "brian", "charles"));
 
         System.out.println(names);
 
         ArrayList<String> names1 = new ArrayList<>();
 
-        ArrayList<String> weekDays = new ArrayList<>(Arrays.asList("Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"));
+        ArrayList<String> weekDays = new ArrayList<>(Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"));
         weekDays.forEach(day -> {
-            System.out.println(day.toString());
+            System.out.println(day);
         });
 
 
-        Iterator<String> iterator =  weekDays.iterator();
-        while(iterator.hasNext()){
-            System.out.println("Iterator : "+iterator.next());
+        Iterator<String> iterator = weekDays.iterator();
+        while (iterator.hasNext()) {
+            System.out.println("Iterator : " + iterator.next());
         }
         System.out.println();
 
         ListIterator<String> listIterator = weekDays.listIterator();
-        while(listIterator.hasPrevious()) {
+        while (listIterator.hasPrevious()) {
             System.out.println(listIterator.previous());
         }
 
@@ -360,9 +370,9 @@ public static void printFromBack(ArrayList<String> strings){
         //ArrayList of ArrayList
         List<List<Integer>> marks = new ArrayList<>();
 
-        marks.add( Arrays.asList(10, 20, 30) );
-        marks.add( Arrays.asList(40, 50, 60) );
-        marks.add( Arrays.asList(70, 80, 90) );
+        marks.add(Arrays.asList(10, 20, 30));
+        marks.add(Arrays.asList(40, 50, 60));
+        marks.add(Arrays.asList(70, 80, 90));
 
         for (List<Integer> mark : marks) {
             System.out.println(mark);
