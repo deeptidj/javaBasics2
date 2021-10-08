@@ -68,10 +68,10 @@ public class TreeNode {
      }
     public void traversePostOrder() {
         if (this.left != null) {
-            this.left.traverseInOrder();
+            this.left.traversePostOrder();
         }
         if (this.right != null) {
-            this.right.traverseInOrder();
+            this.right.traversePostOrder();
         }
         System.out.print(this.data + " , ");
     }

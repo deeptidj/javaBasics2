@@ -39,6 +39,7 @@ public class IntegerArrayQuestions {
 
         shiftingLetters();
     }
+
     /*
     n1 = 6; A = {1, 5, 10, 20, 40, 80}
     n2 = 5; B = {6, 7, 20, 80, 100}

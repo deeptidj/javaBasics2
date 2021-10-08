@@ -130,4 +130,62 @@ public class LinkedList {
         System.out.println(currentNode.d);
         System.out.println();
     }
+    public boolean isPalindrome() {
+        if (head == null ) return false;
+
+        Node slow = head;
+        Node fast = head;
+        while(fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node prev = slow;
+        Node curr = slow.next;
+
+        while(curr != null) {
+            Node next = curr.next;
+            System.out.println(prev.d);
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        tail = prev;
+
+         Node left = head;
+         Node right = tail;
+        while(left != slow && right != slow){
+            if (left.d != right.d) return false;
+            right = right.next;
+            left = left.next;
+        }
+        return true;
+    }
+    public void reverseLinkedList() {
+        if (head == null) return;
+        if (head.next == null) return;
+        Node prev = null;
+        Node curr = head;
+      //  Node next = head.next;
+       // System.out.print(curr.d + "  "+next.d);
+        System.out.println();
+//        if(head.next.next != null) next = head.next.next; else {
+//            Node t = tail;
+//            tail = head;
+//            head = t;
+//        }
+        Node next;
+        while(curr != null) {
+            System.out.println(curr.d);
+
+             next = curr.next;
+            curr.next = prev;
+
+//            next.next = curr;
+
+            prev = curr;
+            curr = next;
+           // next = next.next;
+        }
+        head = prev;
+    }
 }

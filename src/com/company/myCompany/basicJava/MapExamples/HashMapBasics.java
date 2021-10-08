@@ -59,6 +59,7 @@ public class HashMapBasics {
         Collection<Integer> values = map.values();
         Set<Integer> keys = map.keySet();
 
+
         System.out.println("===="+ " Values"+ "======");
         for (Integer i : values) {
             System.out.println(i);

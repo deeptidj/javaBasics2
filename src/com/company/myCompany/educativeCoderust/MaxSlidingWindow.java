@@ -16,8 +16,6 @@ public class MaxSlidingWindow {
         int[] res = new int[5];
         Deque<Integer> deque = new ArrayDeque<>(); int i = -1;
 
-
-
             int left;
             int right;
             int currentMax;

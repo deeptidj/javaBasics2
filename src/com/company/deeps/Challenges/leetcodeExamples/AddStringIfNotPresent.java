@@ -8,7 +8,7 @@ import java.util.*;
      */
     class AddStringIfNotPresent {
         public static void main(String[] args) {
-            final List<String> strings = new ArrayList<String>();
+            final List<String> strings = new LinkedList<>();
             strings.add("Foo");
             strings.add("Bar");
             strings.add("Baz");

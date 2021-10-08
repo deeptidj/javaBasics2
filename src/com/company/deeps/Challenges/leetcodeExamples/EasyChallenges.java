@@ -45,11 +45,11 @@ public class EasyChallenges {
     }
     static boolean isPowerOF4(int num) {
         //16 => 4*4 = 16
-        int res=1;
-        for (int i = 0; i < num; i++) {
-            res = res *4;
-            if(res == num) return true;
-        }
+//        int res=1;
+//        for (int i = 0; i < num; i++) {
+//            res = res *4;
+//            if(res == num) return true;
+//        }
         return false;
     }
     static boolean detectCapitalUsage(String s) {

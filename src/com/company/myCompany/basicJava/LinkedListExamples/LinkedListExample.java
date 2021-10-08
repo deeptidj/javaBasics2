@@ -3,12 +3,13 @@ package com.company.myCompany.basicJava.LinkedListExamples;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class LinkedListExample {
     public static void main(String[] args) {
         //Insertions and deltions are not as expensive as in arrays
-        LinkedList<String> ll = new LinkedList<>(Arrays.asList("one", "two", "three"));
+        List<String> ll = new LinkedList<String>(Arrays.asList("one", "two", "three"));
         Iterator<String> iterator = ll.iterator();
         while(iterator.hasNext()) {
             System.out.print(iterator.next()+" ");

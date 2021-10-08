@@ -35,17 +35,29 @@ public class Main {
         looped.append(3);
         looped.append(4);
         looped.append(5);
-        looped.append(6);
-        looped.append(7);
-        looped.append(8);
-        looped.append(9);
-        looped.append(10);
+        looped.append(5);
+        looped.append(4);
+        looped.append(3);
+        looped.append(2);
+        looped.append(1);
+
+//        looped.append(6);
+//        looped.append(7);
+//        looped.append(8);
+//        looped.append(9);
+//        looped.append(10);
 
         looped.print();
-        Node n = looped.getNthNode(3);
-        Node n3 = looped.getNthNode(2);
-        n.next = n3;
-        System.out.println(looped.isLoop());
+//        Node n = looped.getNthNode(3);
+//        Node n3 = looped.getNthNode(2);
+//        n.next = n3;
+//        System.out.println(looped.isLoop());
 
+
+      //  looped.reverseLinkedList();
+        looped.print();
+        System.out.println(looped.isPalindrome());
+
+        //slooped.print();
     }
 }

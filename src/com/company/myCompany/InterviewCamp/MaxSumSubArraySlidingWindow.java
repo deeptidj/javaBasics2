@@ -22,10 +22,10 @@ public class MaxSumSubArraySlidingWindow {
 
         int sum; int max = nums[0];
         for (int i = 0; i < nums.length; i++) {
-            sum = 0; // 1
-            for (int j = i; j < nums.length; j++) { // 1 , 2
-                sum += nums[j]; // 1 -7 = -6 + 2 = -4
-                max = Math.max(sum, max); // -6, 1 = 1; -4,1= 1;
+            sum = 0;
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+                max = Math.max(sum, max);
             }
         }
         return max;
@@ -46,7 +46,7 @@ public class MaxSumSubArraySlidingWindow {
     static int[] subArraySumTarget(int[] nums, int targetSum) {
         if (nums == null || nums.length == 0 )
             throw new IllegalArgumentException("Input array is empty or null");
-       int left = 0 ; int right = 0 ; int currentSum = 0;
+       int left = 0 ; int right = 0 ; int currentSum = nums[0];
         while ( right < nums.length && left < nums.length) {
             if (currentSum > targetSum) {
                 currentSum -= nums[left];

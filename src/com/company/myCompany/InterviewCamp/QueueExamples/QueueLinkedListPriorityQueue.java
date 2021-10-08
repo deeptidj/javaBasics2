@@ -1,4 +1,4 @@
-package com.company.myCompany.basicJava.QueueExamples;
+package com.company.myCompany.InterviewCamp.QueueExamples;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -12,6 +12,7 @@ public class QueueLinkedListPriorityQueue {
     }
     static void linkedListQueue() {
         Queue<String> q1 = new LinkedList<String>();
+
 
         q1.add("test1");
         q1.add("test2");
